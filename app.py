@@ -40,21 +40,7 @@ def web():
         
     return render_template('paginainicial.html')
 
-@app.route('/planilha', methods=['GET','POST'])
-def planilha_enviar():
-    if request.method == 'POST':
-        subject = request.form['subject']
-        print(subject)
-        if (subject == 'drive'):
-            Drive.drive()
-        else:
-            print('Usuario não quer enviar')
-    return render_template('planilha.html')
 
-@app.route('/powerbi')
-def power_bi():
-    
-    return render_template('powerbi.html')
 
 if __name__ == '__main__':
     app.run()
